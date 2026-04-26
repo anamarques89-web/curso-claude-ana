@@ -1,0 +1,1081 @@
+/* ============================================================
+   ARENACASH — DESIGN TOKENS
+   Onboarding Guiado · Protótipo v1.0
+   Iniciativa 3 — "Suas Primeiras Aplicações"
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --brand-red:       #FF494C;
+  --brand-red-hover: #E63B3E;
+  --brand-red-press: #C8282B;
+  --brand-black:     #0A0A0A;
+  --brand-white:     #FFFFFF;
+
+  /* Surfaces */
+  --surface-primary:   #FFFFFF;
+  --surface-secondary: #F9F9F9;
+  --surface-tertiary:  #F2F2F2;
+  --surface-dark:      #0A0A0A;
+
+  /* Semantic */
+  --success: #1FA05B;
+  --error:   #D93434;
+  --warning: #E08A1E;
+  --info:    #2870E0;
+
+  /* Neutral scale */
+  --neutral-900: #141414;
+  --neutral-700: #333333;
+  --neutral-500: #7A7A7A;
+  --neutral-300: #D1D1D1;
+  --neutral-100: #F2F2F2;
+
+  /* Radius */
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-pill: 999px;
+
+  /* Spacing (múltiplos de 4px) */
+  --s1:  4px;
+  --s2:  8px;
+  --s3:  12px;
+  --s4:  16px;
+  --s5:  20px;
+  --s6:  24px;
+  --s8:  32px;
+  --s10: 40px;
+  --s12: 48px;
+  --s16: 64px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #E5E5E5;
+  color: var(--neutral-900);
+  padding: 48px 24px 96px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+/* ============================================================
+   PROTOTYPE CANVAS
+   ============================================================ */
+
+.prototype-canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+/* Screen label / metadata above each phone */
+.screen-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.screen-tag {
+  display: inline-block;
+  background: var(--brand-red);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.screen-title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  letter-spacing: -0.01em;
+}
+
+.screen-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--neutral-500);
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   PHONE FRAME
+   ============================================================ */
+
+.phone-frame {
+  width: 390px;
+  background: var(--surface-secondary);
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 8px #1c1c1e,
+    0 0 0 10px #2c2c2e,
+    0 40px 80px rgba(0,0,0,0.40);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ============================================================
+   STATUS BAR
+   ============================================================ */
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px 6px;
+  background: var(--brand-black);
+  color: white;
+}
+
+.status-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ============================================================
+   APP HEADER (dark — Tela 1)
+   ============================================================ */
+
+.app-header--dark {
+  background: var(--brand-black);
+  padding: var(--s3) var(--s6) var(--s5);
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.logo-symbol {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--brand-red);
+  line-height: 1;
+}
+
+.logo-wordmark {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   NAV HEADER (com back button — Telas 2 e 3)
+   ============================================================ */
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s3) var(--s4);
+  background: var(--surface-primary);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.nav-back {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--neutral-700);
+}
+
+.nav-title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   HERO — TELA 1
+   ============================================================ */
+
+.hero--dark {
+  background: var(--brand-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--s8) var(--s6) var(--s10);
+}
+
+.hero-icon {
+  margin-bottom: var(--s5);
+}
+
+.hero-title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: var(--s3);
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  max-width: 270px;
+}
+
+/* ============================================================
+   STEPS — TELA 1
+   ============================================================ */
+
+.steps-section {
+  background: var(--surface-primary);
+  padding: var(--s5) var(--s6);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+  position: relative;
+  padding-bottom: var(--s5);
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.step-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.step-icon--done   { background: var(--success); }
+.step-icon--active { background: var(--brand-red); color: white; }
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 5px;
+}
+
+.step-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.step-status {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+.step-status--active {
+  color: var(--brand-red);
+  font-weight: 600;
+}
+
+/* Linha conectora entre steps */
+.step-connector {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% - 32px);
+  z-index: 0;
+}
+
+.step-connector--done { background: var(--success); }
+
+/* ============================================================
+   INFO CARD — TELA 1
+   ============================================================ */
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+  background: var(--surface-primary);
+  margin: var(--s4);
+  padding: var(--s4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neutral-300);
+}
+
+.info-card__icon { flex-shrink: 0; margin-top: 1px; }
+
+.info-card__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--neutral-700);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  width: 100%;
+  text-align: center;
+  transition: background 150ms, box-shadow 150ms;
+}
+
+.btn--primary {
+  background: var(--brand-red);
+  color: white;
+  box-shadow: 0 8px 24px rgba(255,73,76,0.28);
+}
+
+.btn--secondary {
+  background: transparent;
+  border: 1px solid var(--neutral-300);
+  color: var(--neutral-900);
+}
+
+.btn--tertiary {
+  background: none;
+  color: var(--brand-red);
+  font-size: 14px;
+}
+
+.btn--sm {
+  font-size: 13px;
+  padding: 9px 16px;
+  width: auto;
+}
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  padding: var(--s4) var(--s6) var(--s8);
+}
+
+/* ============================================================
+   PRODUCT ARENA FOOTER
+   ============================================================ */
+
+.pa-footer {
+  padding: var(--s3) var(--s6);
+  border-top: 1px solid var(--neutral-300);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: var(--surface-primary);
+  gap: var(--s2);
+}
+
+.pa-footer img {
+  height: 18px;
+  width: auto;
+}
+
+.pa-footer__fallback {
+  font-family: 'Archivo', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  color: var(--brand-red);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   TELA 2 — PERFIL E SUGESTÃO DE PRODUTO
+   ============================================================ */
+
+.profile-section {
+  padding: var(--s5) var(--s4) var(--s4);
+  background: var(--surface-primary);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  background: rgba(40,112,224,0.08);
+  color: var(--info);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--s3);
+}
+
+.profile-context {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--neutral-700);
+  line-height: 1.5;
+}
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--neutral-500);
+  letter-spacing: 0.18em;
+  padding: var(--s5) var(--s4) var(--s3);
+  text-transform: uppercase;
+}
+
+/* --- Product Card --- */
+
+.product-card {
+  background: var(--surface-primary);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+  padding: var(--s4);
+  margin: 0 var(--s4) var(--s3);
+}
+
+.product-card--highlighted {
+  border-color: var(--brand-red);
+}
+
+.product-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand-red);
+  background: rgba(255,73,76,0.08);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--s3);
+}
+
+.product-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--s3);
+}
+
+.product-card__issuer {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+  margin-bottom: 2px;
+}
+
+.product-card__name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  letter-spacing: -0.01em;
+}
+
+.product-card__rate {
+  text-align: right;
+}
+
+.product-card__rate-value {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--success);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.product-card__rate-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+.product-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-bottom: var(--s4);
+}
+
+.meta-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--neutral-700);
+  background: var(--surface-tertiary);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.product-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--s3);
+  border-top: 1px solid var(--neutral-100);
+}
+
+.product-card__security {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+.bottom-spacer { height: 80px; }
+
+/* --- Bottom Tab Nav --- */
+
+.bottom-nav {
+  display: flex;
+  height: 68px;
+  background: var(--surface-primary);
+  box-shadow: 0 -1px 0 var(--neutral-300);
+  flex-shrink: 0;
+}
+
+.bottom-nav__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--neutral-500);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.bottom-nav__item--active {
+  color: var(--brand-red);
+  font-weight: 600;
+}
+
+/* ============================================================
+   TELA 3 — CONFIRMAR APLICAÇÃO
+   ============================================================ */
+
+.content-pad {
+  padding: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+/* --- Product Summary Card --- */
+
+.product-summary-card {
+  background: var(--surface-primary);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+  padding: var(--s5);
+}
+
+.product-summary__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--s4);
+}
+
+.product-summary__issuer {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+  margin-bottom: 3px;
+}
+
+.product-summary__name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  letter-spacing: -0.01em;
+}
+
+.product-summary__rate-block {
+  text-align: right;
+}
+
+.product-summary__rate {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--success);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.product-summary__rate-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+.product-summary__divider {
+  height: 1px;
+  background: var(--neutral-300);
+  margin-bottom: var(--s4);
+}
+
+.product-summary__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s4);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.detail-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--neutral-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.detail-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--neutral-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-value--success { color: var(--success); }
+
+/* --- Input --- */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.input-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--neutral-700);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--surface-tertiary);
+  border: 1.5px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  height: 56px;
+  padding: 0 var(--s4);
+  gap: var(--s2);
+}
+
+.input-prefix {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--neutral-500);
+  flex-shrink: 0;
+}
+
+.input-field {
+  flex: 1;
+  background: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--neutral-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.input-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+/* --- Projection Card --- */
+
+.projection-card {
+  background: rgba(31,160,91,0.07);
+  border: 1px solid rgba(31,160,91,0.22);
+  border-radius: var(--radius-lg);
+  padding: var(--s4);
+}
+
+.projection-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s3);
+}
+
+.projection-card__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.projection-card__main {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+  margin-bottom: var(--s2);
+}
+
+.projection-card__value {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--neutral-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.projection-card__gain {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--success);
+  font-variant-numeric: tabular-nums;
+}
+
+.projection-card__note {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+  line-height: 1.45;
+}
+
+/* --- Security Note --- */
+
+.security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s2);
+}
+
+.security-note span {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--neutral-500);
+  line-height: 1.45;
+}
+
+/* ============================================================
+   SHARED BOTTOM SECTION
+   ============================================================ */
+
+.screen-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  padding: 0 var(--s4) var(--s6);
+}
+
+/* ============================================================
+   MODE BAR
+   ============================================================ */
+
+.mode-bar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--brand-black);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--s6);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.07);
+}
+
+.mode-bar__half {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mode-bar__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
+
+.mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--radius-md);
+  background: var(--brand-red);
+  color: white;
+  transition: background 150ms;
+}
+
+.mode-btn:hover { background: var(--brand-red-hover); }
+
+.mode-btn--ghost {
+  background: rgba(255,255,255,0.1);
+}
+
+.mode-btn--ghost:hover { background: rgba(255,255,255,0.16); }
+
+.mode-steps {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.mode-step {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 220ms, color 220ms;
+}
+
+.mode-step--active { background: var(--brand-red); color: white; }
+.mode-step--done   { background: var(--success); color: white; }
+
+.mode-step-line {
+  width: 20px;
+  height: 2px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 1px;
+}
+
+/* ============================================================
+   APP MODE — single-screen view
+   ============================================================ */
+
+.prototype-canvas.app-mode {
+  gap: 0;
+  padding-top: var(--s8);
+  padding-bottom: var(--s8);
+}
+
+.prototype-canvas.app-mode .screen-meta { display: none; }
+.prototype-canvas.app-mode .phone-frame { display: none; }
+.prototype-canvas.app-mode .phone-frame.screen-active { display: flex; }
+
+body.app-mode-body { background: #1a1a1a; }
+
+/* ============================================================
+   SCREEN TRANSITIONS
+   ============================================================ */
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.screen-enter-right { animation: slideInRight 0.22s cubic-bezier(0.2,0.6,0.2,1) both; }
+.screen-enter-left  { animation: slideInLeft  0.22s cubic-bezier(0.2,0.6,0.2,1) both; }
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--neutral-900);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms, transform 200ms;
+  z-index: 999;
+  white-space: nowrap;
+  max-width: calc(100vw - 48px);
+  text-align: center;
+}
+
+.toast.toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   INPUT STATES
+   ============================================================ */
+
+.input-wrapper:focus-within { border-color: var(--brand-red); }
+.input-wrapper.input-error  { border-color: var(--error); }
+
+.input-error-msg {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--error);
+  margin-top: var(--s1);
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%,60%  { transform: translateX(-5px); }
+  40%,80%  { transform: translateX(5px); }
+}
+
+.input-shake { animation: shake 0.35s ease; }
+
+/* ============================================================
+   SUCCESS OVERLAY
+   ============================================================ */
+
+.success-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s8) var(--s6);
+  z-index: 50;
+}
+
+.success-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--s4);
+  max-width: 300px;
+}
+
+.success-title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.success-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
+}
+
+.success-body strong { color: white; }
+
+.success-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin-top: calc(-1 * var(--s2));
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  width: 100%;
+  margin-top: var(--s2);
+}
